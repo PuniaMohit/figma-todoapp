@@ -1,15 +1,74 @@
-.green{
+.todolist-container {
+    padding-top: 1%;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    margin-right: 2%;
+    opacity: 0.8;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid black;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+
+
+.list {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.list-border {
+    border-bottom: 1px solid #ababab;
+    padding-bottom: 1%;
+    width: 100%;
+}
+
+.list-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.time {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 1%;
+}
+
+.time-icon {
+    color: gray;
+    padding-right: 2%;
+}
+
+.list-time {
+    font-size: 0.8rem;
+    color: gray;
+}
+
+.green {
     height: 10px;
     width: 10px;
+    border-radius: 50%;
     background-color: green;
 }
-.yellow{
+
+.yellow {
     height: 10px;
     width: 10px;
+    border-radius: 50%;
     background-color: yellow;
 }
-.red{
+
+.red {
     height: 10px;
     width: 10px;
+    border-radius: 50%;
     background-color: red;
 }

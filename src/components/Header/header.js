@@ -1,13 +1,16 @@
+import "./header.css";
+import * as Icon from "react-bootstrap-icons";
 
-const Header =(props)=>{
+const Header = (props) => {
+  const showPopUp = () => {
+    props.setShowPop(true);
+  };
+  return (
+    <div className="header">
+      <div>Today</div>
+      <Icon.PlusCircle className="icon" onClick={showPopUp} />
+    </div>
+  );
+};
 
-const showPopUp=()=>{
-    props.setShowPop(true)
-}
-    return (<div>
-        <div>Today</div>
-        <div onClick={showPopUp}><button>+</button></div>
-    </div>)
-    }
-    
-    export default Header;
+export default Header;
