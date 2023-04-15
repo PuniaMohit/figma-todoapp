@@ -1,38 +1,62 @@
-.todolist-container {
-    padding-top: 1%;
+.todolist-main-container {
+    margin-top: 4px;
 }
 
 .checkbox {
-    width: 20px;
-    height: 20px;
-    margin-right: 2%;
-    opacity: 0.8;
-    border-radius: 50%;
-    vertical-align: middle;
-    border: 1px solid black;
-    appearance: none;
-    -webkit-appearance: none;
-    outline: none;
-    cursor: pointer;
+    display: none;
 }
 
+input[type="checkbox"] + span:before {
+    width: 24px;
+    height: 24px;
+    border: 1.5px solid black;
+    content: "";
+    display: inline-block;
+    margin: 0 16px 0 0;
+    padding: 0;
+    vertical-align: top;
+    border-radius: 50%;
+}
 
+input[type="checkbox"]:checked + span:before {
+    background: #1460c8;
+    border: 1.5px solid #1460c8;
+    box-shadow: inset 0px 0px 0px 1px #fff;
+    color: #333;
+    content: "";
+    text-align: center;
+    border-radius: 50%;
+}
 
-.list {
+.input-box {
     display: flex;
     justify-content: flex-start;
+    align-items: center;
+    margin: 19px auto;
+    width: 90%;
 }
 
 .list-border {
-    border-bottom: 1px solid #ababab;
-    padding-bottom: 1%;
-    width: 100%;
-}
-
-.list-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid #ababab;
+    padding-bottom: 19px;
+    width: 90%;
+    margin-left: 4%;
+}
+
+@font-face {
+    font-family: 'SFProText';
+    src: url(../../fonts/SF-Pro-Text-Bold.otf)
+}
+
+.list-content {
+    width: 90%;
+}
+
+.task-name {
+    font-family: 'SFProText';
 }
 
 .time {
@@ -43,6 +67,7 @@
 }
 
 .time-icon {
+    font-size: 0.8rem;
     color: gray;
     padding-right: 2%;
 }
@@ -52,23 +77,49 @@
     color: gray;
 }
 
+
+
 .green {
-    height: 10px;
-    width: 10px;
+    height: 12px;
+    width: 12px;
     border-radius: 50%;
     background-color: green;
 }
 
 .yellow {
-    height: 10px;
-    width: 10px;
+    height: 12px;
+    width: 12px;
     border-radius: 50%;
     background-color: yellow;
 }
 
 .red {
-    height: 10px;
-    width: 10px;
+    height: 12px;
+    width: 12px;
     border-radius: 50%;
     background-color: red;
+}
+
+@media(max-width:376px) {
+    .list-content {
+        width: 271px;
+    }
+
+    .list {
+        width: 100%;
+    }
+
+    .list-border {
+        margin-left: 0px;
+    }
+
+    .dotOuterBox {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    .input-box {
+        margin-left: 18px;
+        margin-right: 18px;
+    }
 }

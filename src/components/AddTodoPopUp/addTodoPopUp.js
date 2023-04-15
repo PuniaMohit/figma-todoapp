@@ -67,7 +67,7 @@ const AddTodoPopUp = (props) => {
   return (
     <div className="input-container">
       <div className="input-inside-container">
-        <h2>Add Todo</h2>
+        <div className="popup-header">Add Todo</div>
         <textarea
           className={emptyInput ? "task-input-red" : "task-input"}
           onChange={(event) => {

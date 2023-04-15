@@ -5,6 +5,6 @@
 
 @media(max-width:376px) {
     .container {
-        width: 339px;
+        width: 100%;
     }
 }

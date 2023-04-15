@@ -2,7 +2,7 @@
     border: 2px solid #f3f5f8;
     width: 27%;
     position: absolute;
-    top: 10%;
+    top: 22%;
     left: 37%;
     background-color: white;
 }
@@ -10,6 +10,17 @@
 .input-inside-container {
     width: 90%;
     margin: 0 auto;
+}
+
+@font-face {
+    font-family: 'SFProText';
+    src: url(../../fonts/SF-Pro-Text-Bold.otf)
+}
+
+.popup-header {
+    font-family: 'SFProText';
+    font-size: 18px;
+    padding-bottom: 10px;
 }
 
 .task-input {
@@ -42,6 +53,9 @@
     justify-content: space-between;
     margin-top: 3%;
     margin-bottom: 1%;
+    font-family: 'SFProText';
+    font-weight: 600;
+    font-size: 18px;
 }
 
 button {
@@ -77,5 +91,45 @@ button {
     .daytime-input {
         width: 44vw;
         margin-top: 3%;
+    }
+}
+
+@media(max-width:376px) {
+    .input-container {
+        width: 87%;
+        top: 90px;
+        left: 25px;
+        height: 300px;
+    }
+
+    .input-inside-container {
+        width: 100%;
+        margin-left: 15px;
+        margin-top: 12px;
+    }
+
+    .task-input {
+        height: 190px;
+        width: 289px;
+        border-color: #f3f5f8;
+        margin: 0 auto;
+        resize: none;
+    }
+
+    .task-input-red {
+        height: 190px;
+        width: 289px;
+        border-color: red;
+        resize: none;
+    }
+
+    .daytime-input {
+        width: 289px;
+        margin-top: 3%;
+    }
+
+    .buttons {
+        margin-left: 15px;
+        margin-right: 42px;
     }
 }

@@ -14,6 +14,16 @@ function App() {
     },
     { name: "Pay for rent", time: "2023-04-15 7:14 pm", color: "yellow" },
     { name: "Buy a milk", time: "2023-04-13 8:20 pm", color: "yellow" },
+    {
+      name: "Don't forget to pick up Mickeal from school",
+      time: "2023-04-13 8:20 pm",
+      color: "yellow",
+    },
+    {
+      name: "Buy a chocolate for Charlotte",
+      time: "2023-04-13 8:20 pm",
+      color: "yellow",
+    },
   ]);
   useEffect(() => {}, []);
 

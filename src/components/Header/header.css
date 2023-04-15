@@ -3,7 +3,6 @@
     padding: 0px;
 }
 
-
 .header {
     display: flex;
     justify-content: space-between;
@@ -29,4 +28,11 @@
     width: 25px;
     height: 25px;
     color: blue;
+}
+
+@media(max-width:376px) {
+    .header {
+        width: 339px;
+        margin: 0 auto;
+    }
 }
