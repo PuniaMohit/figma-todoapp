@@ -5,10 +5,19 @@ const TodoList = (props) => {
   const showTaskCompleted = (complete, index) => (event) => {
     const { checked } = event.target;
     const newArr = props.todoList.map((item, i) => {
+      let day = item.time.split(" ")[0];
+      const selectedDate = new Date(day).getDate();
+      const realDate = new Date().getDate();
       if (index === i) {
-        return checked
-          ? { ...item, color: "green" }
-          : { ...item, color: "yellow" };
+        if (realDate === selectedDate) {
+          if (item.color === "green" && !checked) {
+            return { ...item, color: "yellow" };
+          } else {
+            return { ...item, color: "green" };
+          }
+        } else {
+          return item;
+        }
       } else {
         return item;
       }
