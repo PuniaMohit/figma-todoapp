@@ -1,7 +1,8 @@
-import { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./addTodoPopUp.css";
 
 const AddTodoPopUp = (props) => {
+  const popupRef = useRef(null);
   const [input, setInput] = useState("");
   const [dateAndTime, setDateAndTime] = useState("");
   const [dotColor, setDotColor] = useState("");
@@ -44,9 +45,6 @@ const AddTodoPopUp = (props) => {
     } else if (realDate < selectedDate) {
       setDotColor("green");
     }
-    // else if (realDate > selectedDate) {
-    //     setDotColor('red') ....it is commented for later reference
-    // }
   };
 
   const removeTodoInput = () => {
@@ -55,6 +53,8 @@ const AddTodoPopUp = (props) => {
   const updateTodo = () => {
     if (input === "") {
       setEmptyInput(true);
+    } else if (!dateAndTime) {
+      setErrorMessage("Date");
     } else {
       setEmptyInput(false);
       props.setShowPop(false);
@@ -64,31 +64,42 @@ const AddTodoPopUp = (props) => {
       ]);
     }
   };
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+  }, []);
+  const handleClickOutside = (event) => {
+    if (popupRef.current && !popupRef.current.contains(event.target)) {
+      props.setShowPop(false);
+    }
+  };
   return (
-    <div className="input-container">
-      <div className="input-inside-container">
-        <div className="popup-header">Add Todo</div>
-        <textarea
-          className={emptyInput ? "task-input-red" : "task-input"}
-          onChange={(event) => {
-            setInput(event.target.value);
-            setEmptyInput(false);
-          }}
-        />
-        {emptyInput ? <div className="error">Input is Empty</div> : <></>}
-        {errorMessage ? (
-          <div className="error">Your picked wrong {errorMessage}</div>
-        ) : (
-          <></>
-        )}
-        <input
-          className="daytime-input"
-          type="datetime-local"
-          onChange={updateTime}
-        ></input>
-        <div className="buttons">
-          <button onClick={removeTodoInput}>Cancel</button>
-          {errorMessage ? <></> : <button onClick={updateTodo}>Done</button>}
+    <div>
+      <div className="faded-background"></div>
+      <div className="input-container" ref={popupRef}>
+        <div className="input-inside-container">
+          <div className="popup-header">Add Todo</div>
+          <textarea
+            className={emptyInput ? "task-input-red" : "task-input"}
+            onChange={(event) => {
+              setInput(event.target.value);
+              setEmptyInput(false);
+            }}
+          />
+          {emptyInput ? <div className="error">Input is Empty</div> : <></>}
+          {errorMessage ? (
+            <div className="error">Your picked wrong {errorMessage}</div>
+          ) : (
+            <></>
+          )}
+          <input
+            className="daytime-input"
+            type="datetime-local"
+            onChange={updateTime}
+          ></input>
+          <div className="buttons">
+            <button onClick={removeTodoInput}>Cancel</button>
+            {errorMessage ? <></> : <button onClick={updateTodo}>Done</button>}
+          </div>
         </div>
       </div>
     </div>

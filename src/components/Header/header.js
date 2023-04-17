@@ -5,6 +5,7 @@ const Header = (props) => {
   const showPopUp = () => {
     props.setShowPop(true);
   };
+
   return (
     <div className="header">
       <div>Today</div>
