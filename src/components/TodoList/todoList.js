@@ -30,7 +30,7 @@ const TodoList = (props) => {
                 key={index}
               />
               <div className="task-content">
-                <div className="div">
+                <div className="checkbox-content">
                   <div className="task-name">{element.name}</div>
                 </div>
                 {element.time ? (

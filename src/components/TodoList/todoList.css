@@ -2,6 +2,11 @@
     margin-top: 38px;
 }
 
+.list {
+    width: 80%;
+    margin: 0 auto;
+}
+
 @font-face {
     font-family: 'SFProText';
     src: url(../../fonts/SF-Pro-Text-Bold.otf)
@@ -11,7 +16,7 @@
     display: none;
 }
 
-.div:before {
+.checkbox-content:before {
     width: 24px;
     height: 24px;
     border: 1.5px solid black;
@@ -22,7 +27,7 @@
     border-radius: 50%;
 }
 
-input[type="checkbox"]:checked + div > .div:before {
+input[type="checkbox"]:checked + div > .checkbox-content:before {
     background: #1460c8;
     border: 1.5px solid #1460c8;
     box-shadow: inset 0px 0px 0px 1px #fff;
@@ -32,7 +37,7 @@ input[type="checkbox"]:checked + div > .div:before {
     border-radius: 50%;
 }
 
-.div {
+.checkbox-content {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -72,12 +77,10 @@ input[type="checkbox"]:checked + div > .div:before {
 
 
 
-
-
 .time-icon {
     font-size: 0.8rem;
     color: gray;
-    padding-right: 2%;
+    padding-right: 1%;
 }
 
 .list-time {
