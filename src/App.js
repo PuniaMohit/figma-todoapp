@@ -9,19 +9,19 @@ function App() {
   const [todoList, setTodoList] = useState([
     {
       name: "Start making a presentation",
-      time: "2023-04-14 7:08 pm",
+      time: "2023-04-18 7:08 pm",
       color: "yellow",
     },
-    { name: "Pay for rent", time: "2023-04-15 7:14 pm", color: "yellow" },
-    { name: "Buy a milk", time: "2023-04-13 8:20 pm", color: "yellow" },
+    { name: "Pay for rent", time: "2023-04-18 7:14 pm", color: "yellow" },
+    { name: "Buy a milk", time: "2023-04-20 8:20 pm", color: "green" },
     {
       name: "Don't forget to pick up Mickeal from school",
-      time: "2023-04-13 8:20 pm",
+      time: "2023-04-18 8:20 pm",
       color: "yellow",
     },
     {
       name: "Buy a chocolate for Charlotte",
-      time: "2023-04-13 8:20 pm",
+      time: "2023-04-18 8:20 pm",
       color: "yellow",
     },
   ]);

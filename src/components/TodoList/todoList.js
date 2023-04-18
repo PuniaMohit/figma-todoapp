@@ -16,7 +16,12 @@ const TodoList = (props) => {
             return { ...item, color: "green" };
           }
         } else {
-          return item;
+          if (item.color === 'yellow') {
+            return { ...item, color: 'green' }
+          }
+          else {
+            return item
+          }
         }
       } else {
         return item;
@@ -40,7 +45,7 @@ const TodoList = (props) => {
               />
               <div className="task-content">
                 <div className="checkbox-content">
-                  <div className="task-name">{element.name}</div>
+                  <p className="task-name">{element.name}</p>
                 </div>
                 {element.time ? (
                   <div className="time">
